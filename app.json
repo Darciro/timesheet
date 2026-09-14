@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "timesheet",
+    "slug": "timesheet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/hero.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/hero.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.rickmanu.timesheet",
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/hero.png",
+        "backgroundColor": "#ffffff"
+      }
+    }
+  }
+}
