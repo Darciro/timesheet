@@ -1,0 +1,18 @@
+diff --git a/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/presentation/builders/ExpoNotificationBuilder.kt b/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/presentation/builders/ExpoNotificationBuilder.kt
+index 610d303..a7a1d41 100644
+--- a/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/presentation/builders/ExpoNotificationBuilder.kt
++++ b/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/presentation/builders/ExpoNotificationBuilder.kt
+@@ -153,7 +153,12 @@ open class ExpoNotificationBuilder(
+     } else {
+       builder.setLargeIcon(largeIcon)
+     }
+-    return builder.build()
++    val built = builder.build()
++    // Repete som e vibração do canal até a notificação ser tocada, dispensada ou a aba de notificações ser aberta.
++    if (content.body?.optBoolean("insistent") == true) {
++      built.flags = built.flags or Notification.FLAG_INSISTENT
++    }
++    return built
+   }
+ 
+   private fun applySoundsAndVibrations(content: INotificationContent, builder: NotificationCompat.Builder) {

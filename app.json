@@ -2,25 +2,39 @@
   "expo": {
     "name": "timesheet",
     "slug": "timesheet",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./src/assets/hero.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/hero.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#161826"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "package": "com.rickmanu.timesheet",
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/hero.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#161826"
+      },
+      "permissions": [
+        "android.permission.SCHEDULE_EXACT_ALARM"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "38c79a1c-6ca1-44e6-88f2-91d1ddea91e6"
       }
-    }
+    },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-notifications"
+    ]
   }
 }
